@@ -1,0 +1,87 @@
+.custom-select {
+  border-radius: 8px;
+  border: 1px solid var(--wl-primary-primary-300, #E1E3E4);
+  position: relative;
+  width: 270px;
+  height: 50px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 45%;
+    z-index: 9999;
+    width: 10px;
+    height: 10px;
+    border: 2px solid $color-main;
+    border-top: transparent;
+    border-right: transparent;
+    transform: translateY(-50%) rotate(-45deg);
+    pointer-events: none;
+    transition: all 0.3s linear;
+  }
+
+  &__input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+
+
+    &::placeholder {
+      color: $color-main;
+      font-family: "Nunito Sans";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 15px;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 60px;
+
+    background-color: $color-main;
+    border-radius: 8px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    &_opened {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__item {
+    padding: 10px;
+    color: $color-green;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__item:hover {
+    color: $color-main;
+    background-color: $color-green;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+
+}

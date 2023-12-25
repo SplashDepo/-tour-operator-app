@@ -1,0 +1,22 @@
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    padding-top: 16px;
+
+
+  }
+
+  &__button {
+    margin-left: 50px;
+  }
+}
+
+.logo {
+  margin-right: auto;
+}

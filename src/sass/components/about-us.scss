@@ -1,0 +1,70 @@
+.about-us {
+  &__container {
+    padding: 100px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+  }
+
+  &__video {
+    margin-top: -270px;
+    margin-left: 130px;
+    position: relative;
+  }
+
+  &__img {
+    border-radius: 24px;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &__info {
+    max-width: 580px;
+  }
+
+  &__subtitle {
+    margin: 0;
+  }
+
+  &__title {
+    margin: 0 0 40px 0;
+  }
+
+  &__text {
+    margin: 0 0 40px 0;
+    color: $color-dark-purple;
+
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__play {
+    padding: 14px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: rgba(253, 253, 253, 0.60);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all .2s ease;
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.4);
+    }
+  }
+
+  &__icon {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+}

@@ -1,0 +1,132 @@
+.footer {
+
+  background-color: $color-green;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 170px 0 80px;
+  }
+
+
+
+  &__info {
+    max-width: 480px;
+  }
+
+
+
+  &__title {
+    margin: 0 0 17px 0;
+    color: $color-main;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    /* 120% */
+  }
+
+
+
+  &__text {
+    margin: 0 0 80px 0;
+    color: $color-main;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 142.857% */
+  }
+
+
+  &__contact {
+    color: $color-main;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+
+    &_type {}
+
+  }
+
+  &__socials {
+    margin: 32px 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+
+  &__social-item {}
+
+  &__social-link {
+    display: block;
+  }
+
+  &__list-wrap {}
+
+  &__list-title {
+    margin: 0 0 20px 0;
+    color: #F3F5F4;
+
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  &__services-list {}
+
+  &__attention-list {}
+}
+
+.footer-list {
+
+  margin: 0;
+  padding: 0;
+  max-width: 280px;
+  list-style: none;
+
+
+  &__item {
+    position: relative;
+    padding-left: 14px;
+
+    &::before {
+      content: "";
+      background: url("./assets/icons/arrow.svg") no-repeat;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 6px;
+      height: 10px;
+
+      transform: translateY(-50%);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+
+  // .footer-list__link
+
+  &__link {
+    color: $color-main;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+  }
+}
+
+.footer-icon {
+  width: 32px;
+  height: 32px;
+}
