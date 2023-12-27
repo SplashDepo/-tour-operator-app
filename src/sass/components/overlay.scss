@@ -1,11 +1,11 @@
 .overlay {
   position: absolute;
-  top: calc(500px - 110px);
+  top: calc(500px - 100px);
   // transform: translateY(calc(500px - 110px));
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 30px 25px 25px;
+  padding: 30px 31px 25px;
   border-radius: 32px;
   background: rgba(80, 80, 80, 0.404);
   backdrop-filter: blur(5px);
