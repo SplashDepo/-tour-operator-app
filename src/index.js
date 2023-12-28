@@ -1,25 +1,107 @@
 import "./index.html"
 import "./index.scss"
 
-const customSelect = document.querySelector('.custom-select')
-const customSelectList = customSelect.querySelector('.custom-select__list')
 
+const SPACEBAR_CODE = "Space";
+const ENTER_CODE = "Enter";
+const ESCAPE_CODE = "Escape";
+const DOWN_ARROW_CODE = "ArrowDown";
+const UP_ARROW_CODE = "ArrowUp";
 
-customSelect.addEventListener('click', () => {
-  customSelectList.classList.toggle('custom-select__list_opened')
-})
+const selectedNode = document.querySelector('.dropdown__selected')
+const dropdownList = document.querySelector('.dropdown__list')
+const dropdownListContainer = document.querySelector('.dropdown__list-container')
+const dropdownListItems = dropdownList.querySelectorAll('.dropdown__list-item')
 
+let activeIndex = 0;
 
-const playBtn = document.querySelector(".about-us__play");
-const popup = document.querySelector(".popup-video");
+function toggleDropdownVisibility(e) {
+  let pressOpenedKey = e.code === SPACEBAR_CODE || e.code === ENTER_CODE
 
-playBtn.addEventListener('click', showPopup)
+  if (e.type === 'click' || pressOpenedKey) {
+    e.preventDefault()
+    dropdownList.classList.toggle('open')
+    dropdownListContainer.setAttribute('aria-expended', dropdownList.classList.contains('open'))
+  }
 
-function showPopup() {
-  popup.style.display = "flex"
+  if (e.code === ESCAPE_CODE) {
+    dropdownClose()
+  }
+
+  if (e.code === DOWN_ARROW_CODE) {
+    focusNextItem(e)
+  }
+
+  if (e.code === UP_ARROW_CODE) {
+    focusPrevItem(e)
+  }
 }
 
-let year = 2012
-let condition = year == 2015;
+function dropdownClose() {
+  dropdownList.classList.remove('open')
+  dropdownListContainer.setAttribute('aria-expended', false)
+}
 
-console.log(condition)
+function setSelectedItem(e) {
+  selectedNode.value = e.target.textContent
+}
+
+
+dropdownListItems.forEach(item => {
+  item.addEventListener('click', (e) => {
+    setSelectedItem(e)
+    dropdownClose()
+  })
+
+  item.addEventListener('keydown', function (e) {
+    switch (e.code) {
+      case ENTER_CODE:
+        setSelectedItem(e)
+        dropdownClose()
+        break;
+      case ESCAPE_CODE:
+        dropdownClose()
+        break;
+      case DOWN_ARROW_CODE:
+        focusNextItem(e)
+        break;
+      case UP_ARROW_CODE:
+        focusPrevItem(e)
+        break;
+      default:
+        break;
+    }
+  })
+})
+
+function focusNextItem(e) {
+  e.preventDefault()
+  if (activeIndex > dropdownListItems.length - 1) return
+  dropdownListItems[activeIndex].focus()
+  activeIndex++
+
+}
+
+function focusPrevItem(e) {
+  e.preventDefault()
+  if (activeIndex <= 0) return
+  activeIndex--
+  dropdownListItems[activeIndex].focus()
+
+}
+
+selectedNode.addEventListener('keydown', e => {
+  toggleDropdownVisibility(e)
+})
+
+selectedNode.addEventListener('click', e => {
+  toggleDropdownVisibility(e)
+})
+
+document.addEventListener('click', function (e) {
+  if (!dropdownList.classList.contains('open')) return
+
+  if (e.target.closest('.custom-select')) return
+
+  dropdownClose()
+})

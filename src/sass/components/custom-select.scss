@@ -20,68 +20,85 @@
     pointer-events: none;
     transition: all 0.3s linear;
   }
+}
 
-  &__input {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
+.dropdown {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+
+  &__selected {
+    padding: 13px 16px;
     width: 100%;
     height: 100%;
-    padding: 0 16px;
+
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    background-color: transparent;
+    border: none;
+    color: #FDFDFD;
     box-sizing: border-box;
-
-
-    &::placeholder {
-      color: $color-main;
-      font-family: "Nunito Sans";
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 150%;
-    }
   }
 
   &__list {
-    list-style: none;
-    padding: 15px;
-    margin: 0;
-    width: 100%;
-    box-sizing: border-box;
     position: absolute;
-    top: 60px;
+    top: calc(100% + 2px);
+    left: 0;
 
-    background-color: $color-main;
+    margin: 0;
+    padding: 12px;
+    width: 100%;
+
+    box-sizing: border-box;
+    box-shadow: 0.5px 5px 7px gray;
+    background-color: #FDFDFD;
     border-radius: 8px;
+    list-style: none;
 
     opacity: 0;
     visibility: hidden;
+  }
 
-    &_opened {
-      opacity: 1;
-      visibility: visible;
+  &__list-item {
+    padding: 10px 7px;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: $color-green;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: $color-green;
+      color: $color-main;
     }
   }
 
-  &__item {
-    padding: 10px;
-    color: $color-green;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 150%;
+  &__list-item:not(:last-child) {
+    margin-bottom: 7px;
   }
+}
 
-  &__item:not(:last-child) {
-    margin-bottom: 10px;
-  }
+#dropdown-label {
+  color: #FDFDFD;
+  font-family: Nunito Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+  padding-left: 8px;
+}
 
-  &__item:hover {
-    color: $color-main;
-    background-color: $color-green;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-
-
+.open {
+  opacity: 1;
+  visibility: visible;
 }

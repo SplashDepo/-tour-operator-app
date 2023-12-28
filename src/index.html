@@ -31,24 +31,35 @@
         <p class="hero__text"> Насладись прогулкой в горах с&nbsp;командой единомышленников </p>
         <form action="#" class="hero__form" name="hero-form">
           <div class="custom-select">
-            <input class="custom-select__input" type="text" placeholder="Локация для тура" readonly>
-            <ul class="custom-select__list">
-              <li class="custom-select__item">Россия</li>
-              <li class="custom-select__item">США</li>
-              <li class="custom-select__item">Великобритания</li>
+            <ul class="dropdown">
+              <input class="dropdown__selected" type="text" role="button" tabindex="0" aria-labelledby="dropdown-label"
+                value="Локация для тура" readonly>
+              <li class="dropdown__list-container" aria-expanded="false" role="list">
+                <ul class="dropdown__list">
+                  <li class="dropdown__list-item" tabindex="0" id="option-1">Россия</li>
+                  <li class="dropdown__list-item" tabindex="0" id="option-2">Франция</li>
+                  <li class="dropdown__list-item" tabindex="0" id="option-3">Германия</li>
+                </ul>
+              </li>
             </ul>
+            <span id="dropdown-label">Выберите из списка</span>
           </div>
           <div class="hero__date-wrap">
             <input class="hero__date-input" type="date" name="start-date">
             <input class="hero__date-input" type="date" name="start-date">
           </div>
           <div class="custom-select">
-            <input class="custom-select__input" type="text" placeholder="Участники" readonly>
-            <ul class="custom-select__list">
-              <li class="custom-select__item">Россия</li>
-              <li class="custom-select__item">США</li>
-              <li class="custom-select__item">Великобритания</li>
+            <ul class="dropdown">
+              <li class="dropdown__selected" role="button" tabindex="0" aria-labelledby="dropdown-label">Участники</li>
+              <li class="dropdown__list-container" aria-expanded="false" role="list">
+                <ul class="dropdown__list">
+                  <li class="dropdown__list-item" tabindex="0" id="option-1">Россия</li>
+                  <li class="dropdown__list-item" tabindex="0" id="option-2">Франция</li>
+                  <li class="dropdown__list-item" tabindex="0" id="option-3">Германия</li>
+                </ul>
+              </li>
             </ul>
+            <span id="dropdown-label">минимум 4 человека</span>
           </div>
           <button class="hero__button">Найти программу</button>
         </form>
@@ -472,7 +483,7 @@
       </div>
     </div>
   </footer>
-  <div class="popup-video">
+  <!-- <div class="popup-video">
     <div class="popup-video__wrap">
       <button class="popup-video__close"></button>
       <div class="popup-video__iframe-wrap">
@@ -480,6 +491,6 @@
           src="https://www.youtube.com/embed/DAlzlebbdPo?autoplay=1" frameborder="0" allowfullscreen>
       </div>
     </div>
-  </div>
+  </div> -->
 </body>
 </html>
