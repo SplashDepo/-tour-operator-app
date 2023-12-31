@@ -12,16 +12,13 @@
 
   &__button {
     margin-left: 50px;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
   }
 }
 
 .logo {
   margin-right: auto;
-}
-
-
-@media (max-width: 1024px) {
-  .header__button {
-    display: none;
-  }
 }
