@@ -5,13 +5,26 @@
   &__container {
     display: flex;
     justify-content: space-between;
-    padding: 176px 0 80px;
+    padding: 176px 10px 80px;
+    gap: 5px;
+
+    @media (max-width:980px) {
+      flex-wrap: wrap;
+      gap: 50px;
+    }
+
+    @media (max-width:565px) {
+      padding: 40px 10px;
+    }
   }
-
-
 
   &__info {
     max-width: 480px;
+    flex: 1;
+
+    @media (max-width:980px) {
+      flex: 1 1 280px;
+    }
   }
 
 
@@ -67,7 +80,14 @@
     display: block;
   }
 
-  &__list-wrap {}
+  &__list-wrap {
+    flex: 1;
+    max-width: 280px;
+
+    @media (max-width:980px) {
+      flex: 1 1 280px;
+    }
+  }
 
   &__list-title {
     margin: 0 0 20px 0;

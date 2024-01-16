@@ -5,8 +5,15 @@
   background-repeat: no-repeat;
 
   &__container {
-    padding-top: 550px;
-    padding-bottom: 82px;
+    padding: 470px 10px 125px;
+
+    @media (max-width:980px) {
+      padding: 300px 10px 80px;
+    }
+
+    @media (max-width:565px) {
+      padding: 230px 10px 50px;
+    }
   }
 
   &__title {
@@ -24,6 +31,16 @@
     font-weight: 700;
     line-height: 150%;
     letter-spacing: 0.55px;
+
+    @media (max-width:768px) {
+      font-size: 38px;
+    }
+
+    @media (max-width:565px) {
+      margin: 0 0 32px;
+      font-size: 28px;
+      letter-spacing: unset;
+    }
   }
 
   &__form {
@@ -35,6 +52,16 @@
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.20);
     backdrop-filter: blur(3px);
+
+    @media (max-width: 1100px) {
+      flex-wrap: wrap;
+    }
+
+    @media (max-width:565px) {
+      padding: unset;
+      background: none;
+      backdrop-filter: unset;
+    }
   }
 
 
@@ -43,6 +70,15 @@
     border-radius: 8px;
     border: 1px solid $color-main;
     width: 270px;
+    min-height: 50px;
+
+    @media (max-width:1100px) {
+      flex: 1 1 48%;
+    }
+
+    @media (max-width:565px) {
+      display: none;
+    }
   }
 
   &__date-input {
@@ -57,6 +93,10 @@
 
     &::-webkit-calendar-picker-indicator {
       filter: invert(1);
+    }
+
+    @media (max-width:1100px) {
+      flex: 1;
     }
   }
 

@@ -11,6 +11,10 @@
   background-color: transparent;
   cursor: pointer;
 
+  @media (max-width: 1100px) {
+    display: block;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -64,8 +68,8 @@
 
 }
 
-@media (max-width: 1024px) {
-  .burger-button {
-    display: block;
-  }
-}
+// @media (max-width: 1100px) {
+//   .burger-button {
+//     display: block;
+//   }
+// }
